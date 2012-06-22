@@ -1,0 +1,35 @@
+import re
+
+####################################################################################################
+
+def MetadataObjectForURL(url):
+    vc = VideoClipObject(
+      title = url, url = url)
+    return vc
+
+
+def MediaObjectsForURL(url):
+  
+  return [
+    MediaObject(
+      container = Container.MP4,
+      video_codec = VideoCodec.H264,
+      audio_codec = AudioCodec.AAC,
+      audio_channels = 2,
+      optimized_for_streaming = True,
+      parts = [PartObject(key=HTTPLiveStreamURL(Callback(PlayVideo, url=url)))],
+      #parts = [PartObject(key=url)],
+      #duration = -1
+    )
+  ]
+
+def NormalizeURL(url):
+    return url
+    #return url+'?wowzasessionid=1237011204'
+
+
+####################################################################################################
+
+def PlayVideo(url):
+    Log(url)
+    return Redirect(url)

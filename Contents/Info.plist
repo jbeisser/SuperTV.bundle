@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
+    "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleIdentifier</key>
+  <string>com.plexapp.plugins.SuperTV</string>
+  <key>PlexClientPlatforms</key>
+  <string>*</string>
+  <key>PlexFrameworkVersion</key>
+  <string>2</string>
+  <key>PlexPluginClass</key>
+  <string>Channel</string>
+  <key>PlexURLServices</key>
+  <dict>
+     <key>HLS</key>
+     <dict>
+        <key>Identifier</key>
+        <string>com.plexapp.plugins.SuperTV</string>
+        <key>URLPattern</key>
+        <string>http://.*:1935/.*/playlist\.m3u8</string>
+        <key>TestURLs</key>
+        <array>
+           <string>http://s6.webport.tv:1935/live/z110102.stream/playlist.m3u8</string>
+        </array>
+     </dict>
+  </dict>
+</dict>
+</plist>
